@@ -1,6 +1,61 @@
-<h1>Excercise 3</h1>
+<h1>Excercise 4</h1>
 
-<h3>Using templates with a list of data</h3>
+<h3>Hello Backbone, Views views everywhere</h3>
+
+<section id='container'>
+
+</section>
+
+
+<section class='meow'>
+
+</section>
+
+<script type="text/javascript">
+
+  var app = app || {};
+  app.listItemView = Backbone.View.extend({
+    initialize: function() {
+      console.log('oh snap the view has arrived');
+      this.render();
+      console.log('hey content should be rendered in');
+      console.log(this.$el);
+
+    },
+    render: function() {
+      console.log('oh snap the view took shades off');
+      this.$el.append('<img src= "http://img.picturequotes.com/2/6/5236/if-you-want-to-be-a-lion-you-must-train-with-lions-quote-1.jpg">');
+    }
+  });
+
+  var listItem = new app.listItemView({
+    el: $('#container')
+  });
+
+  var listItem = new app.listItemView({
+    el: $('.meow')
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p id="content">
 
