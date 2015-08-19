@@ -1,0 +1,31 @@
+<h1>Excercise 1</h1>
+
+<h3>How to break ERB</h3>
+
+<p>
+  Solution: escape underscore variables w/double % symbols. Ex: <code><%%=
+  variable %></code>. THis way, Ruby doesnt expect a Ruby variable... and underscore
+  + Ruuby can coexist. :)
+
+
+</p>
+
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+
+  });
+</script>
+
+<script type="text/javascript" id="tpl">
+  The quick brown <%%= animal %> jumped over the <%%= verb %> dog.
+
+</script>
+
+
+<!-- if you include an underscore temp in a rb, you have
+ to break it w/% on first -->

@@ -1,0 +1,56 @@
+<h1>Excercise 3</h1>
+
+<h3>Using templates with a list of data</h3>
+
+<p id="content">
+
+</p>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+var stories = [
+  {name: 'Sonju took over the world', priority: 'AWESOME'},
+  {name: 'Brad and Isaac buy out Last.fm', priority: 'BODACIOUS'},
+  {name: 'David Hayes reaches the moon', priority: 'RADICAL'},
+  {name: 'James goes one day without falling', priority: 'WIN'},
+  {name: 'Billionaire Kate buys GChat', priority: 'MOST EXCELLENT'},
+  {name: 'Tim Rourke replaces Slack with RChat', priority: 'KICKASS'}
+];
+
+var storyTemplate = _.template($('#story').html());
+//var storyTemplateRedux = _.template('<li')
+
+for (var story in stories) {
+
+  var data = stories [story];
+  console.log(data);
+  $('#content').append(storyTemplate(data));
+
+
+}
+})
+
+
+
+</script>
+
+
+<script type="text/template" id="story">
+
+  <li><%%= name %>, <%%= priority %></li>
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- if you include an underscore temp in a rb, you have
+ to break it w/% on first -->
