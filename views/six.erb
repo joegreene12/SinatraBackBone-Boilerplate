@@ -1,0 +1,30 @@
+<h1>Execercise 6</h1>
+
+<h3>Backbone Models</h3>
+
+<script type="text/javascript">
+  // var bacon = bacon || {};
+  var movieApp = movieApp || {};
+
+    movieApp.movieModel = Backbone.Model.extend({
+      //specify an URL
+      url: 'http://www.omdbapi.com/?t=a+knight\'s+tale&y=&plot=short&r=json',
+       initialize: function(){
+        console.log('the model is ready');
+        //when the model data changes.. lets fire an event
+        this.on('change', function(event) {
+          //change event implements a design pattern
+          //called Object.observe()
+          // logging the model's attributes!
+          console.log(this.attributes);
+          console.log('dude....the model..whoa..it changed!');
+
+        });
+      }
+
+    });
+
+    var movie = new movieApp.movieModel();
+    movie.fetch();
+
+</script>

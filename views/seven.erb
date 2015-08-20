@@ -1,0 +1,32 @@
+<h1>excercise 7</h1>
+
+<h3>Making a Model</h3>
+
+
+<p>
+  Create a name space of your choosing. THen create a model w/a URL to a movie somewhere
+  on omdb. then fetch the data and use the on.change() event to log in the console the model.attributes
+
+</p>
+
+
+<script type="text/javascript">
+
+  var movie2app = movie2app || {};
+
+  movie2app.movieModel = Backbone.Model.extend({
+    url: 'http://www.omdbapi.com/?t=Vampire+in+Brooklyn&y=&plot=short&r=json',
+      initialize: function(){
+        console.log('the model is ready2go');
+        this.on('change', function(event) {
+        console.log(this.attributes);
+        console.log('dude.the model has changed!');
+      });
+    }
+
+  });
+    var movie2 = new movie2app.movieModel();
+    movie2.fetch();
+
+
+</script>
